@@ -17,7 +17,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                <form action="${contextPath }/member/loginProcess" method="post">
+                <form action="${contextPath}/member/login" method="post">
                     <div class="modal-body">
                         <label for="userId" class="mr-sm-2">ID : </label>
                         <input type="text" class="form-controll mb-2 mr-sm-2" placeholder="Enter ID" id="userId" name="userId"> <br>
