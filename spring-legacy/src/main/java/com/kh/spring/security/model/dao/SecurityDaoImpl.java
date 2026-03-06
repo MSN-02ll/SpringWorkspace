@@ -15,7 +15,7 @@ public class SecurityDaoImpl implements SecurityDao{
 	@Override
 	public UserDetails loadUserByusername(String username) {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectOne("security.loadUserByUsername",username);
 	}
 
 }

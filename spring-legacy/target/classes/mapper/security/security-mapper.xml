@@ -21,7 +21,7 @@
 	 </resultMap>
 	 
 	 <select id="selectAuthorities" resultMap="authMap">
-	 	SELECT * FROM AUTHORITES
+	 	SELECT * FROM AUTHORITIES
 	 	WHERE USER_NO = #{userNo}
 	 </select>
 	 
