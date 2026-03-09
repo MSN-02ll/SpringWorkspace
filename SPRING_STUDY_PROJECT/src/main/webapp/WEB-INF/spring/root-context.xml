@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+
+ <!-- 1단계) DB연결을 위한 도구 설정 -->
+ <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
+ 	<property name="driverClassName" value="${your.driverClassName}" />
+ 	<property name="url" value="${your.url}" />
+ 	<property name="username" value="${your.username}" />
+ 	<property name="password" value="${your.password}" />	 	
+ </bean>
+ <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
+ 	<!-- mybatis 설정파일 위치 지정 -->
+ 	<property name="configLocation" value="classpath:mybatis-config.xml" />
+ 		
+ 	<!-- DB연결을 위한 도구 등록  -->
+ 	<property name="dataSource" ref="dataSource" />
+ 	<!-- mapper파일을 읽어올 경로 -->
+ 	<property name="mapperLocations" value="classpath*:mapper/**/*.xml" />
+ </bean>
+ <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+ 	<constructor-arg ref="sqlSessionFactory" />
+</bean>
+ 
+ <!-- 트랜잭션을 대신관리해주는 bean객체 생성 -->
+ <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+ 	<property name="dataSource" ref="realDataSource"/>
+ </bean> 
+ 
+ </beans>
