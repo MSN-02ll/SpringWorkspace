@@ -239,6 +239,24 @@
 			<scope>compile</scope>
 		</dependency>
 		<!-- 게시판 서비스 관련 의존성 끝 -->
+		<!-- 웹소켓 의존성 -->
+		<!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-websocket -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>comple</scope>
+		</dependency>
+		<!-- 웹소켓 의존성 끝 -->
+		<!-- 메세지 의존성 끝 -->
+		<!-- Source: https://mvnrepository.com/artifact/org.springframework/spring-messaging -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-messaging</artifactId>
+		    <version>${org.springframework-version}</version>
+		    <scope>compile</scope>
+		</dependency>
+		<!-- 메세지 의존성 끝 -->
 
 
 	</dependencies>
