@@ -23,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Aop {
 /* 
  * JoinPoint
- *  - 클라이언트가 호출 가능ㅎㄴ 모든 메서드 실행 지점을 의미
+ *  - 클라이언트가 호출 가능한 모든 메서드 실행 지점을 의미
  *  - AOP가 적용될수 있는 후보지들.
  *  - Pointcut
  *  무수히 많은 JoinPoint안에서 실제 어드바이스 공통로직이 
