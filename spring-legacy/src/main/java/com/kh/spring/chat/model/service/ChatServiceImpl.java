@@ -48,4 +48,17 @@ public class ChatServiceImpl implements ChatService{
 		return list;
 	}
 
+	@Override
+	public int insertMessage(ChatMessage chatMessage) {
+		return chatDao.insertMessage(chatMessage);
+	}
+	
+	@Override
+	public void exitChatRoom(ChatMessage message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
 }

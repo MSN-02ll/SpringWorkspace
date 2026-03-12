@@ -43,4 +43,10 @@ public class ChatDaoImpl implements ChatDao{
 		return session.selectList("chat.selectChatMessage",join);
 	}
 
+	@Override
+	public int insertMessage(ChatMessage chatMessage) {
+		// TODO Auto-generated method stub
+		return session.insert("chat.insertMessage", chatMessage) ;
+	}
+
 }
